@@ -8,7 +8,7 @@ WORKDIR /app
 COPY main.py /app/main.py
 
 # Instalar las dependencias necesarias
-RUN pip install confluent-kafka
+RUN pip install --no-cache-dir confluent-kafka
 
 # Comando para ejecutar la aplicación
 CMD ["python", "main.py"]

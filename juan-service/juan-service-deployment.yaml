@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: juan-service
-        image: jacklazer/juan-service:v1
+        image: jacklazer/juan-service:v2
         ports:
         - containerPort: 8080

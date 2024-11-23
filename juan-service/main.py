@@ -1,3 +1,4 @@
+import time
 from confluent_kafka import Producer
 
 producer_config = {
@@ -7,6 +8,9 @@ producer_config = {
 
 producer = Producer(producer_config)
 
-producer.produce('univalle-ideas', key=None, value="Hola chavales, soy Juan C")
-            
-producer.flush()
+while True:
+    producer.produce('univalle-ideas', key=None, value="Hola chavales, soy Juan C")
+                
+    producer.flush()
+    
+    time.sleep(5)
