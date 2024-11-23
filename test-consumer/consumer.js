@@ -3,7 +3,7 @@ const { Kafka } = require('kafkajs');
 // Crear una instancia de Kafka con la configuración adecuada
 const kafka = new Kafka({
   clientId: 'my-consumer',
-  brokers: ['localhost:9092'] // reemplaza con la lista de tus brokers de Kafka
+  brokers: ['kafka-broker-1:29092']
 });
 
 // Crear un consumidor en el grupo 'test-group'

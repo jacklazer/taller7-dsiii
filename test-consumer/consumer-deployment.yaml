@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer-kafka
+  labels:
+    app: consumer-kafka
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: consumer-kafka
+  template:
+    metadata:
+      labels:
+        app: consumer-kafka
+    spec:
+      containers:
+      - name: consumer-kafka
+        image: jacklazer/consumer-kafka:v1
+        env:
+        - name: KAFKA_BROKER
+          value: "kafka-broker-1:29092" # Dirección de tu broker Kafka
+        - name: KAFKA_TOPIC
+          value: "univalle-ideas" # Topic al que se suscribirá
+        ports:
+        - containerPort: 8080 # Si es necesario, ajusta esto según tu aplicación
