@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer-kafka
+  labels:
+    app: producer-kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: producer-kafka
+  template:
+    metadata:
+      labels:
+        app: producer-kafka
+    spec:
+      containers:
+      - name: producer-kafka-container
+        image: jacklazer/producer-kafka:v4
+        ports:
+        - containerPort: 3000

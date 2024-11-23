@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: juan-service
+  labels:
+    app: juan-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: juan-service
+  template:
+    metadata:
+      labels:
+        app: juan-service
+    spec:
+      containers:
+      - name: juan-service
+        image: jacklazer/juan-service:v1
+        ports:
+        - containerPort: 8080
