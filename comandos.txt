@@ -14,6 +14,10 @@ kubectl apply -f test-producer/producer-deployment.yaml
 kubectl apply -f test-producer/producer-service.yaml
 kubectl apply -f juan-service/juan-service-deployment.yaml
 kubectl apply -f juan-service/juan-service-service.yaml
+kubectl apply -f jose-service/jose-service.yaml
+kubectl apply -f jose-service/jose-service-deployment.yaml
+
+
 
 
 Para ingresar al pod de kafka:

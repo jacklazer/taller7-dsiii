@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jose-service
+  labels:  # Corrige la indentación de 'labels'
+    app: jose-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jose-service
+  template:
+    metadata:
+      labels:
+        app: jose-service
+    spec:
+      containers:
+      - name: jose-service
+        image: docker.io/josemp0507/jose-service:latest
+        ports:
+        - containerPort: 8080
