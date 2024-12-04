@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kevin-service
+  labels: 
+    app: kevin-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kevin-service
+  template:
+    metadata:
+      labels:
+        app: kevin-service
+    spec:
+      containers:
+      - name: kevin-service
+        image: ghcr.io/kvel12/kevin-service:latest
+        ports:
+        - containerPort: 8080
