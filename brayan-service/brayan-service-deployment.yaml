@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: brayan-service
+  labels: 
+    app: brayan-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: brayan-service
+  template:
+    metadata:
+      labels:
+        app: brayan-service
+    spec:
+      containers:
+      - name: brayan-service
+        image: docker.io/brayanjurado/brayan-service:latest
+        ports:
+        - containerPort: 8080
