@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yhan-service
+  labels: 
+    app: yhan-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yhan-service
+  template:
+    metadata:
+      labels:
+        app: yhan-service
+    spec:
+      containers:
+      - name: yhan-service
+        image: docker.io/yhcarlos14/yhan-service
+        ports:
+        - containerPort: 8080
